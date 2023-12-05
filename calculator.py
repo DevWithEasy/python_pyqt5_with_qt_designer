@@ -10,8 +10,12 @@ class Ui_MainWindow(object):
                 self.output_label.setText("")
             self.output_label.setText(f'{self.output_label.text()}{pressed}')
 
-    def dot(self):
-        pass
+    def dot_it(self):
+        screen = self.output_label.text()
+        if screen[-1] == '.':
+                pass
+        else:
+                self.output_label.setText(f'{screen}.')
 
     def calculate(self):
         pass
@@ -153,7 +157,7 @@ class Ui_MainWindow(object):
         #----------------------------------------
                 #dot button
         #----------------------------------------
-        self.dot_button = QtWidgets.QPushButton(self.centralwidget,clicked = lambda : self.press_it('.'))
+        self.dot_button = QtWidgets.QPushButton(self.centralwidget,clicked = lambda : self.dot_it())
         self.dot_button.setGeometry(QtCore.QRect(180, 370, 61, 51))
         self.dot_button.setObjectName("dot_button")
 
